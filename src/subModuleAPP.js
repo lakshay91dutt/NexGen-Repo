@@ -38,7 +38,7 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "Unique Registration Id",
-          value: null,
+
           handlerInputChange: this.handleInputChange,
         },
         {
@@ -47,7 +47,7 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "First Name",
-          value: null,
+
           handlerInputChange: this.handleInputChange,
           handlerSubmit: ""
         },
@@ -57,9 +57,8 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "Last Name",
-          value: "",
-          handlerInputChange: this.handleInputChange,
-          handlerSubmit: ""
+
+          handlerInputChange: this.handleInputChange
         },
         {
           labelName: "Email ID",
@@ -67,9 +66,7 @@ class App1 extends Component {
           elementType: "input",
           type: "email",
           placeholder: "Valid Email Id",
-          value: "",
-          handlerInputChange: this.handleInputChange,
-          handlerSubmit: ""
+          handlerInputChange: this.handleInputChange
         },
         {
           labelName: "Mobile Number",
@@ -77,16 +74,15 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "Primary Contact Number",
-          value: "",
+
           handlerInputChange: this.handleInputChange,
-          handlerSubmit: ""
         },
         {
           labelName: "Date Of Birth",
           id: "dob",
           elementType: "input",
           type: "date",
-          handlerInputChange: this.handleInputChange
+          handlerInputChange: this.handleInputChange,
         },
         {
           labelName: "Address",
@@ -94,7 +90,7 @@ class App1 extends Component {
           elementType: "textarea",
           type: "text",
           placeholder: "Permanent Address",
-          handlerInputChange: this.handleInputChange
+          handlerInputChange: this.handleInputChange,
         },
         {
           labelName: "Resume Upload",
@@ -102,7 +98,7 @@ class App1 extends Component {
           elementType: "input",
           type: "file",
           accept: ".pdf",
-          handlerInputChange: this.handleInputChange
+          handlerInputChange: this.handleInputChange,
         },
         {
           labelName: "Department",
@@ -114,7 +110,7 @@ class App1 extends Component {
             { optName: "IOS", optValue: "ios" },
             { optName: "Web Development", optValue: "web-dev" },
             { optName: "DevOps", optValue: "devops" }
-          ]
+          ],
         }
       ]
     };
