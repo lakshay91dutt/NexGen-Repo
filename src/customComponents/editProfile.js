@@ -1,5 +1,5 @@
 // /*
-//     Candidate
+//     Employee
 //             Registration 
 // */
 
