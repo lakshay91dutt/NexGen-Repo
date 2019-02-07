@@ -8,9 +8,12 @@ import './../multiMedia/css/normalize.css';
 import './../multiMedia/css/style.css';
 import './../multiMedia/css/grid.css';
 import './../multiMedia/css/queries.css';
+import './../multiMedia/css/ionicons.min.css';
+
 
 //React module - To use predefined form elements
-import AllELements from '/home/lakshay/Desktop/WorkSpace/admin-console/src/customComponents/formElements'
+import AllELements from '/home/lakshay/Desktop/WorkSpace/admin-console/src/customComponents/formElements';
+import { ChangeEmpStatus as UserData } from '/home/lakshay/Desktop/WorkSpace/admin-console/src/customComponents/editProfile';
 
 //Node module - to write Form data into local JSON file
 import ProcessRecords from '/home/lakshay/Desktop/WorkSpace/admin-console/src/dataFiles/dataFileOperations';
@@ -19,17 +22,17 @@ class App1 extends Component {
     super(props);
     this.state = {
       employeeData: {
-        firstName: "Lakshay",
-        lastName: "",
-        emailId: "",
-        mobile: "",
-        dob: "",
-        address: "",
-        designation: "",
-        department: "",
-        ctc: "",
-        status: "",
-        fileUrl: ""
+        firstName: null,
+        lastName: null,
+        emailId: null,
+        mobile: null,
+        dob: null,
+        address: null,
+        designation: null,
+        department: null,
+        ctc: null,
+        status: null,
+        fileUrl: null
       },
       formElementProps: [
         {
@@ -38,7 +41,6 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "Unique Registration Id",
-
           handlerInputChange: this.handleInputChange,
         },
         {
@@ -47,9 +49,7 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "First Name",
-
           handlerInputChange: this.handleInputChange,
-          handlerSubmit: ""
         },
         {
           labelName: "Last Name",
@@ -57,7 +57,6 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "Last Name",
-
           handlerInputChange: this.handleInputChange
         },
         {
@@ -74,7 +73,6 @@ class App1 extends Component {
           elementType: "input",
           type: "text",
           placeholder: "Primary Contact Number",
-
           handlerInputChange: this.handleInputChange,
         },
         {
@@ -119,22 +117,22 @@ class App1 extends Component {
   // Input Handling methods ------- START
   handleSubmit = event => {
     event.preventDefault();
+    let temp = this.state;
 
-    document.write("<p>" + JSON.stringify(this.state) + "</p>");
-
-    ProcessRecords();
+    return (<UserData attr={temp}></UserData>);
   };
 
   handleInputChange = event => {
     event.preventDefault();
 
     let tempValue;
-    console.log(this.state.employeeData.firstName);
+
     if (event.target.name === "fileUrl") {
       tempValue = event.target.files[0];
     } else {
       tempValue = event.target.value;
     }
+
     this.setState(this.state, () => {
       return { employeeData: { firstName: tempValue } };
     });
@@ -149,7 +147,7 @@ class App1 extends Component {
         </div>
 
         <section className="section-form">
-          <form method="post" className="contact-form">
+          <form className="contact-form" onSubmit={this.handleSubmit}>
             {this.state.formElementProps.map(formElementProps => {
               return (
                 <AllELements

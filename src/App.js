@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import App1 from './customComponents/registerEmployee';
+import Login from './customComponents/login'
 class App extends Component {
     constructor(props) {
         super(props);
@@ -8,24 +9,22 @@ class App extends Component {
     loadApp1 = (event) => {
         event.preventDefault();
         console.log("Clicked");
-        ReactDOM.render(<App1 />, document.getElementById('root'));
+        ReactDOM.render(<Login />, document.getElementById('root'));
     }
     defaultMsg = (event) => {
         event.preventDefault();
         document.write('<h1> Work in progress</h1>');
     }
     render() {
+
         return (
             <div>
-                <div className="hero-text-box">
-                    <h1>ADMINISTRATOR'S DASHBOARD</h1>
-                    <a className="btn btn-ghost" href="register" onClick={this.loadApp1}>Register Employee</a>
-                    <a className="btn btn-full" href="editEmployee" onClick={this.defaultMsg}>Edit Employee Profile</a>
-                    <a className="btn btn-ghost" href="requests" onClick={this.defaultMsg}>Requests</a>
-                    <a className="btn btn-full" href="others" onClick={this.defaultMsg}>Others</a>
+                <div className="hero-text-box" key="login">
+                    <h1>Login As</h1>
+                    <a className="btn btn-ghost" href="register" key="admin" onClick={this.loadApp1}>Administrator</a>
+                    <a className="btn btn-full" href="editEmployee" key="emp" onClick={this.loadApp1}>Employee</a>
                 </div>
             </div>);
-
     }
 }
 export default App;
