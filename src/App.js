@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App1 from './subModuleAPP';
+import App1 from './customComponents/registerEmployee';
 class App extends Component {
     constructor(props) {
         super(props);
