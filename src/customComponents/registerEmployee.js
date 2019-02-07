@@ -12,11 +12,11 @@ import './../multiMedia/css/ionicons.min.css';
 
 
 //React module - To use predefined form elements
-import AllELements from '/home/lakshay/Desktop/WorkSpace/admin-console/src/customComponents/formElements';
-import { ChangeEmpStatus as UserData } from '/home/lakshay/Desktop/WorkSpace/admin-console/src/customComponents/editProfile';
+import AllELements from './formElements';
+import { ChangeEmpStatus as UserData } from './editProfile';
 
 //Node module - to write Form data into local JSON file
-import ProcessRecords from '/home/lakshay/Desktop/WorkSpace/admin-console/src/dataFiles/dataFileOperations';
+import ProcessRecords from './../dataFiles/dataFileOperations';
 class App1 extends Component {
   constructor(props) {
     super(props);

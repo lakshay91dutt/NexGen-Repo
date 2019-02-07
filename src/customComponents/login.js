@@ -57,7 +57,7 @@ class Login extends Component {
         return (
             <div className="App">
                 <div className="row">
-                    <h1>Candidate Registration</h1>
+                    <h1> Registration</h1>
                 </div>
 
                 <section className="section-form">
